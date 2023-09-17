@@ -65,7 +65,7 @@ jobs:
           if [[ "$ORIGIN" == "$CHECK" ]]; then
             rm -rf downloads
             mkdir -p downloads
-            echo $SERVER_URL > downloads/$SERVER_ID
+            echo $SERVER_ID > downloads/$SERVER_URL
           fi
 
       - name: Upload JSON
@@ -89,7 +89,7 @@ jobs:
 
       - name: "Check"
         run: |
-          ls -l downloads
+          ls -1l downloads
 
       - uses: geekyeggo/delete-artifact@v2
         with:
