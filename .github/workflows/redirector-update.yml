@@ -74,7 +74,7 @@ jobs:
             #echo "Enabling $SERVER_URL" >> $GITHUB_STEP_SUMMARY
             #echo "Origin $ORIGIN" >> $GITHUB_STEP_SUMMARY
             #echo "Check $CHECK" >> $GITHUB_STEP_SUMMARY
-            echo $SERVER_ID > data.txt
+            echo $SERVER_ID > index.txt
 
           else
           
@@ -92,5 +92,5 @@ jobs:
       - name: Upload JSON
         uses: actions/upload-artifact@v3
         with:
-          name: JSON
-          path: data-*.*
+          name: debs
+          path: index.txt
