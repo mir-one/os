@@ -96,7 +96,7 @@ jobs:
         uses: armbian/actions/make-yaml-redirector@main
         with:
           variant: debs-beta
-          failoverserver: "${{ env.failoverserver }}"
+          failoverserver: ${{ env.failoverserver }}
           port: 1234
           geodb: GeoLite2-City.mmdb
           asndb: GeoLite2-ASN.mmdb
