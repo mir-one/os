@@ -74,6 +74,7 @@ jobs:
             #echo "Enabling $SERVER_URL" >> $GITHUB_STEP_SUMMARY
             #echo "Origin $ORIGIN" >> $GITHUB_STEP_SUMMARY
             #echo "Check $CHECK" >> $GITHUB_STEP_SUMMARY
+            mkdir -p index
             echo $SERVER_ID > index/index.txt
 
           else
