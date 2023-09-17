@@ -90,14 +90,14 @@ jobs:
       - name: "Check"
         run: |
 
-          ls -1 downloads/
-          echo "failoverserver=$(ls -1 downloads/)" >> $GITHUB_OUTPUT
+          ls -1 downloads/ | sed ':a; N; s/\n/ /; ta'
+          echo "failoverserver=$(ls -1 downloads/ | sed ':a; N; s/\n/ /; ta') " >> $GITHUB_OUTPUT
           
       - name: Test
         uses: armbian/actions/make-yaml-redirector@main
         with:
           variant: debs-beta
-          failoverserver: imola.armbian.com
+          failoverserver:  ${{ env.failoverserver }}
           port: 1234
           geodb: GeoLite2-City.mmdb
           asndb: GeoLite2-ASN.mmdb
