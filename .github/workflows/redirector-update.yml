@@ -63,14 +63,35 @@ jobs:
           ORIGIN=$(timeout 30 curl --retry 5 -s https://imola.armbian.com/apt/control || true)
           CHECK=$(timeout 30 curl --retry 5 -s https://${SERVER_URL}/control || true)
           if [[ "$ORIGIN" == "$CHECK" ]]; then
-            rm -rf index
-            mkdir -p index
-            echo $SERVER_URL > index/$SERVER_ID
+            rm -rf downloads
+            mkdir -p downloads
+            echo $SERVER_URL > downloads/$SERVER_ID
           fi
 
       - name: Upload JSON
         uses: actions/upload-artifact@v3
         with:
-          name: debs
-          path: index
+          name: assets-for-download
+          path: downloads
           if-no-files-found: ignore
+
+  closing:
+    name: "Footer"
+    runs-on: Linux
+    needs: Ping-debs
+    steps:
+
+      - name: "Download artifacts"
+        uses: actions/download-artifact@v3
+        with:
+          name: assets-for-download
+          path: downloads
+
+      - name: "Check"
+        run: |
+          ls -l downloads
+
+      - uses: geekyeggo/delete-artifact@v2
+        with:
+          name: assets-for-download
+          failOnError: false
