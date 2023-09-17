@@ -89,14 +89,15 @@ jobs:
 
       - name: "Check"
         run: |
-        
+
+          ls -l downloads/
           echo "failoverserver=$(ls -1 downloads/)" >> $GITHUB_OUTPUT
           
       - name: Test
         uses: armbian/actions/make-yaml-redirector@main
         with:
           variant: debs-beta
-          failoverserver: ${{ env.failoverserver }}
+          failoverserver: "137"
           port: 1234
           geodb: GeoLite2-City.mmdb
           asndb: GeoLite2-ASN.mmdb
