@@ -90,7 +90,7 @@ jobs:
       - name: "Check"
         run: |
 
-          cat downloads/*
+          cat downloads/* | sed ':a; N; s/\n/ /; ta'
 
       - uses: geekyeggo/delete-artifact@v2
         with:
