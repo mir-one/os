@@ -74,7 +74,7 @@ jobs:
             #echo "Enabling $SERVER_URL" >> $GITHUB_STEP_SUMMARY
             #echo "Origin $ORIGIN" >> $GITHUB_STEP_SUMMARY
             #echo "Check $CHECK" >> $GITHUB_STEP_SUMMARY
-            echo $SERVER_ID > index.txt
+            echo $SERVER_ID > index/index.txt
 
           else
           
@@ -93,4 +93,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: debs
-          path: index.txt
+          path: index
