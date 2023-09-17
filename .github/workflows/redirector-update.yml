@@ -75,8 +75,8 @@ jobs:
             #echo "Origin $ORIGIN" >> $GITHUB_STEP_SUMMARY
             #echo "Check $CHECK" >> $GITHUB_STEP_SUMMARY
             mkdir -p index
-            echo $SERVER_ID > index/index.txt
-
+            echo $SERVER_URL > index/$SERVER_ID
+            
           else
           
              # Change status in NetBox
@@ -95,3 +95,4 @@ jobs:
         with:
           name: debs
           path: index
+          if-no-files-found: ignore
