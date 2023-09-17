@@ -93,11 +93,11 @@ jobs:
           ls -1 downloads/ | sed ':a; N; s/\n/ /; ta'
           echo "failoverserver=$(ls -1 downloads/ | sed ':a; N; s/\n/ /; ta') " >> $GITHUB_ENV
           
-      - name: Test
+      - name: Test debs
         uses: armbian/actions/make-yaml-redirector@main
         with:
-          variant: debs-beta
-          failoverserver:  "${{ env.failoverserver }}"
+          variant: debs
+          failoverserver: "${{ env.failoverserver }}"
           port: 1234
           geodb: GeoLite2-City.mmdb
           asndb: GeoLite2-ASN.mmdb
