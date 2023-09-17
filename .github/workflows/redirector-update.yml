@@ -89,8 +89,20 @@ jobs:
 
       - name: "Check"
         run: |
-
-          cat downloads/* | sed ':a; N; s/\n/ /; ta'
+        
+          echo "failoverserver=$(cat downloads/* | sed ':a; N; s/\n/ /; ta')" >> $GITHUB_OUTPUT
+          
+      - name: Test
+        uses: armbian/actions/make-yaml-redirector@main
+        with:
+          variant: debs-beta
+          failoverserver: ${{ env.failoverserver }}
+          port: 1234
+          geodb: GeoLite2-City.mmdb
+          asndb: GeoLite2-ASN.mmdb
+          dl_map: userdata.csv
+          reloadKey: NLnC4QNF862QumEpt7zwVPZAEvqAz6cZ
+          netbox: ${{ secrets.NETBOX_TOKEN }}
 
       - uses: geekyeggo/delete-artifact@v2
         with:
