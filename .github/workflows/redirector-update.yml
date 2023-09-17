@@ -89,7 +89,8 @@ jobs:
 
       - name: "Check"
         run: |
-          ls -1l downloads
+
+          cat downloads/*
 
       - uses: geekyeggo/delete-artifact@v2
         with:
