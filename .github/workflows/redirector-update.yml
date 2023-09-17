@@ -65,7 +65,7 @@ jobs:
           if [[ "$ORIGIN" == "$CHECK" ]]; then
             rm -rf downloads
             mkdir -p downloads
-            echo $SERVER_ID > downloads/$SERVER_URL
+            echo $SERVER_URL > downloads/$SERVER_ID
           fi
 
       - name: Upload JSON
