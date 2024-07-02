@@ -59,6 +59,7 @@ on:
         - ayn-odin2
         - bananapi
         - bananapicm4io
+        - bananapif3
         - bananapim1plus
         - bananapim2plus
         - bananapim2pro
@@ -5496,7 +5497,7 @@ jobs:
 
       # Cleaning logs
       - name: "Keep only 14 days of workflow logs"
-        uses: igorjs/gh-actions-clean-workflow@v5
+        uses: igorjs/gh-actions-clean-workflow@v6
         with:
           token: "${{ env.GH_TOKEN }}"
           days_old: 7
