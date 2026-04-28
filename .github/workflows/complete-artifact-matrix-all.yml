@@ -42,7 +42,6 @@ on:
         options:
         # branches
         - main
-        - dependabot/pip/pip-26.1
         - desktop-to-armbian-config
         - motd-ip-info-align-wan-only-rows
         - misc-build-cleanup
@@ -61,6 +60,7 @@ on:
         - last_good
         - calamares
         - v26.02
+        - force_uboot_recomp
         default: 'main'
       board:
         type: choice
