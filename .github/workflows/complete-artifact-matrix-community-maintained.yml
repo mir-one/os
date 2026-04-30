@@ -43,7 +43,6 @@ on:
         options:
         # branches
         - main
-        - enh/netboot-extension
         - desktop-to-armbian-config
         - motd-ip-info-align-wan-only-rows
         - misc-build-cleanup
@@ -62,6 +61,7 @@ on:
         - last_good
         - calamares
         - v26.02
+        - force_uboot_recomp
         default: 'main'
       board:
         type: choice
