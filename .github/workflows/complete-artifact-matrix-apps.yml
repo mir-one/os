@@ -41,10 +41,8 @@ on:
         options:
         # branches
         - main
-        - dependabot/github_actions/tspascoal/get-user-teams-membership-4
-        - desktop-to-armbian-config
-        - motd-ip-info-align-wan-only-rows
         - misc-build-cleanup
+        - desktop-to-armbian-config
         - docker-prune-optin
         - fix/p1b-eval-to-declare
         - mate
@@ -60,6 +58,8 @@ on:
         - last_good
         - calamares
         - v26.02
+        - force_uboot_recomp
+        - update-version-lib/tools/shellcheck.sh-koalaman/shellcheck-null
         default: 'main'
       board:
         type: choice
