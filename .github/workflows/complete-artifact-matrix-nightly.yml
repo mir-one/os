@@ -47,8 +47,9 @@ on:
         options:
         # branches
         - main
-        - misc-build-cleanup
+        - fix-imx8m-uboot-binman-hook-conflict
         - desktop-to-armbian-config
+        - misc-build-cleanup
         - docker-prune-optin
         - fix/p1b-eval-to-declare
         - mate
@@ -65,7 +66,6 @@ on:
         - calamares
         - v26.02
         - force_uboot_recomp
-        - update-version-lib/tools/shellcheck.sh-koalaman/shellcheck-null
         default: 'main'
       board:
         type: choice
