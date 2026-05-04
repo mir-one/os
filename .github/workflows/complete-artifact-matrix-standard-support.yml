@@ -41,7 +41,9 @@ on:
         options:
         # branches
         - main
-        - fix-imx8m-uboot-binman-hook-conflict
+        - chore/remove-fast-create-image
+        - update-kernel-configs
+        - igorpecovnik-patch-2
         - desktop-to-armbian-config
         - misc-build-cleanup
         - docker-prune-optin
@@ -50,7 +52,6 @@ on:
         - xtsm1flash
         - musefix
         - fix/docker-riscv64-cross-compilers
-        - update-kernel-configs
         - singlemode
         - tabrisnet_mmdebstrap
         - tabrisnet_i386
@@ -59,7 +60,6 @@ on:
         - last_good
         - calamares
         - v26.02
-        - force_uboot_recomp
         default: 'main'
       board:
         type: choice
