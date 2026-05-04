@@ -41,11 +41,13 @@ on:
         options:
         # branches
         - main
+        - compress-checksum-elastic
         - chore/remove-fast-create-image
         - update-kernel-configs
         - igorpecovnik-patch-2
         - desktop-to-armbian-config
         - misc-build-cleanup
+        - exp/no-docker-privileged
         - docker-prune-optin
         - fix/p1b-eval-to-declare
         - mate
@@ -58,8 +60,6 @@ on:
         - labeling_change
         - adjust_key
         - last_good
-        - calamares
-        - v26.02
         default: 'main'
       board:
         type: choice
